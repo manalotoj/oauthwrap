@@ -22,7 +22,7 @@ describe("oauthwrap", function() {
 			'https://studentverification.accesscontrol.windows.net/WRAPv0.9/', 
 			'userid', 
 			'password', 
-			'https://localhost:44316/');
+			'https://localhost/');
 			promise.then(function(response) {
 				done(new Error('should have failed.'));
 			}, function(err) {

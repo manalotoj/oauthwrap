@@ -1,8 +1,8 @@
-//	filename: index.js
+//	filename: oauthwrap.js
 
 /** 
-* @module oauthwrap 
-* @description Supports function to retrieve OAuth WRAP security tokens from an STS.
+* @module oauth-wrap 
+* @description Provides a function to retrieve OAuth WRAP security tokens.
 */
 
 'use strict';
@@ -16,9 +16,10 @@ var promise = require('promise');
 *	@param {string} uid WRAP name/username/user id.
 *	@param {string} pwd WRAP password.
 *	@param {string} scope WRAP scope.
-*	@param {function} callback Data will contain authorization token formatted as required for
-*		an http request header.
-*	@returns {function} Returns a promise using nodejs promise module.
+*	@returns {function} A promise.
+*		The promise will resolve with the the OAuth WRAP security token
+*		formatted as an http header value.
+*		Any response with a status code that is not 2xx will result in a rejected promise.
 */
 module.exports.getAuthHeader = function(url, uid, pwd, scope) {
 
